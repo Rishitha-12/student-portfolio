@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishitha Lingamkunta - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f7f8;
+            color: #2f2f2f;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #004d4d;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: #2f2f2f;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #008080;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            margin: 4rem 0;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #008080, #2f2f2f);
+            color: white;
+            margin-top: -80px;
+            padding-top: 10rem;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #004d4d;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .section-subtitle {
+            color: #6b7b7b;
+        }
+
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .profile-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .profile-image img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .about-text {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Education */
+        .education-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #008080;
+        }
+
+        .education-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            margin-left: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .education-item h3 {
+            color: #2f2f2f;
+        }
+
+        .institution {
+            color: #008080;
+            font-weight: 600;
+        }
+
+        .grade {
+            background: #008080;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            color: #004d4d;
+            margin-bottom: 1rem;
+        }
+
+        .skill-item {
+            display: inline-block;
+            background: #e0f2f1;
+            color: #2f2f2f;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            margin: 0.3rem;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #008080, #2f2f2f);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-body {
+            padding: 1.5rem;
+        }
+
+        .tech-tag {
+            background: #e0f2f1;
+            color: #2f2f2f;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        /* Achievements */
+        .achievement-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .achievement-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #008080, #2f2f2f);
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #008080, #2f2f2f);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        footer {
+            background: #2f2f2f;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="#" class="logo">Rishitha</a>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="hero">
+        <h1>Rishitha Lingamkunta</h1>
+        <p>AI & Data Science Student | Networking Enthusiast</p>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="profile-card">
+                    <div class="profile-image">
+                        <img src="rishitha.jpg" alt="Rishitha Lingamkunta">
+                    </div>
+                    <h4>Rishitha Lingamkunta</h4>
+                </div>
+                <div class="about-text">
+                    <p>A highly motivated student pursuing a Bachelor's in Artificial Intelligence and Data Science, with a keen interest in networking and data communication. Passionate about applying technical skills in real-world projects and continuously learning in collaborative environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <span class="skill-item">C</span>
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">Java</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <span class="skill-item">HTML</span>
+                    <span class="skill-item">CSS</span>
+                    <span class="skill-item">JavaScript</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Database & Tools</h3>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">Tableau</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <span class="skill-item">Problem Solving</span>
+                    <span class="skill-item">Team Collaboration</span>
+                    <span class="skill-item">Time Management</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <h3>B.Tech - AI & Data Science</h3>
+                    <div class="institution">Shri Vishnu Engineering College for Women, Bhimavaram</div>
+                    <div class="details">2022 - 2026 | CGPA: 7.82</div>
+                </div>
+                <div class="education-item">
+                    <h3>Intermediate - MPC</h3>
+                    <div class="institution">SASI Junior College for Girls, Velivennu</div>
+                    <div class="details">2020 - 2022 | Percentage: 81.5%</div>
+                </div>
+                <div class="education-item">
+                    <h3>School Education</h3>
+                    <div class="institution">St. Joseph’s E.M. High School, Yernagudem</div>
+                    <div class="details">2019 - 2020 | Percentage: 97%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Multilingual Translator</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Built a responsive translation tool using Flask and Google Translate API with auto language detection, dark mode, mobile optimization, and support for 100+ languages.</p>
+                        <div class="tech-tag">Python</div>
+                        <div class="tech-tag">Flask</div>
+                        <div class="tech-tag">Googletrans</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Total Tally (Ordering System)</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Designed a web-based system for coffee shops to streamline billing and order management with UPI integration.</p>
+                        <div class="tech-tag">HTML</div>
+                        <div class="tech-tag">CSS</div>
+                        <div class="tech-tag">JavaScript</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Anomaly Detection in Credit Card Transactions</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Developed a machine learning-based system to flag fraudulent transactions using both supervised and unsupervised algorithms.</p>
+                        <div class="tech-tag">Python</div>
+                        <div class="tech-tag">Scikit-learn</div>
+                        <div class="tech-tag">Matplotlib</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Achievements & Certifications</h2>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Certifications</h3>
+                    <p>IEEE Workshop • C & Data Structures • French Level-1 • NPTEL DBMS</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-users"></i></div>
+                    <h3>Leadership</h3>
+                    <p>Deputy School People Leader – demonstrated strong communication and teamwork skills.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Creative Interests</h3>
+                    <p>Passionate about singing, sketching, and painting — actively participated in cultural events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <a href="mailto:lingamkuntarishitha@gmail.com">lingamkuntarishitha@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <span>+91 8639353301</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <span>Yadavolu, East Godavari, Andhra Pradesh</span>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h3>Profiles</h3>
+                    <div class="contact-item"><i class="fab fa-linkedin contact-icon"></i><a href="https://www.linkedin.com/in/rishitha-lingamkunta-9b6271257">LinkedIn</a></div>
+                    <div class="contact-item"><i class="fab fa-github contact-icon"></i><a href="https://github.com/Rishitha-12">GitHub</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Rishitha Lingamkunta | All Rights Reserved</p>
+</footer>
+</body>
+</html>

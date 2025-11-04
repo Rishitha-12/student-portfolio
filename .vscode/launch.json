@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "Open dummy.html in Edge",
+      "url": "file:///C:/Users/HP/OneDrive/Documents/My%20projects/Student-portfolio/dummy.html"
+    }
+  ]
+}
